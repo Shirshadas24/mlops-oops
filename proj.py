@@ -1,9 +1,23 @@
 class chat:
+    __user_id = 1
     def __init__(self):
+        self.id=chat.__user_id
+        chat.__user_id += 1
+        self.__nulli='Default'
         self.name = ''
         self.password = ''
         self.is_logged_in = False
-        self.menu()
+        # self.menu()
+    def get_nulli(self):
+        return self.__nulli
+    def set_nulli(self, value):
+        self.__nulli = value
+    @staticmethod
+    def get_id():
+        return chat.__user_id
+    @staticmethod
+    def set_id(value):
+        chat.__user_id = value
     def menu(self):
         user_input=input("Enter your choice\n1. Login\n2. signup\n3. press to post\n4.press to message someone\n5. press to exit\n")
         if user_input == '1':
@@ -59,5 +73,3 @@ class chat:
         self.menu()
     def exit(self):
         print("Thank you for using our service\n")
-
-obj=chat()  
